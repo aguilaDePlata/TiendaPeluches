@@ -29,17 +29,17 @@
                 <span asp-validation-for="PrecioVenta" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IdMarca" class="control-label"></label>
+                <label asp-for="IdMarca" class="control-label">Marca</label>
                 <select asp-for="IdMarca" class="form-control" asp-items="ViewBag.IdMarca"></select>
                 <span asp-validation-for="IdMarca" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IdModelo" class="control-label"></label>
+                <label asp-for="IdModelo" class="control-label">Modelo</label>
                 <select asp-for="IdModelo" class="form-control" asp-items="ViewBag.IdModelo"></select>
                 <span asp-validation-for="IdModelo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IdProveedor" class="control-label"></label>
+                <label asp-for="IdProveedor" class="control-label">Proveedor</label>
                 <select asp-for="IdProveedor" class="form-control" asp-items="ViewBag.IdProveedor"></select>
                 <span asp-validation-for="IdProveedor" class="text-danger"></span>
             </div>
@@ -49,8 +49,8 @@
                 <span asp-validation-for="Stock" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Activo" class="control-label"></label>
-                <input asp-for="Activo" class="form-control" />
+                <label asp-for="Activo.HasValue" class="form-check-label">Activo</label>
+                <input asp-for="Activo.HasValue" type="checkbox" class="form-check-input" style="margin-left:10px" />
                 <span asp-validation-for="Activo" class="text-danger"></span>
             </div>
             <div class="form-group">
