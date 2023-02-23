@@ -39,25 +39,25 @@
             @Html.DisplayNameFor(model => model.Activo)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Activo)
+            @Html.CheckBoxFor(model => model.Activo.HasValue, new { @disabled = "true" })
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdMarcaNavigation)
+            @Html.DisplayNameFor(model => model.Marca)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdMarcaNavigation.IdMarca)
+            @Html.DisplayFor(model => model.Marca.Marca1)
         </dd class>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdModeloNavigation)
+            @Html.DisplayNameFor(model => model.Modelo)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdModeloNavigation.IdModelo)
+            @Html.DisplayFor(model => model.Modelo.Modelo1)
         </dd class>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdProveedorNavigation)
+            @Html.DisplayNameFor(model => model.Proveedor)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdProveedorNavigation.IdProveedor)
+            @Html.DisplayFor(model => model.Proveedor.NombresProv)
         </dd class>
     </dl>
     

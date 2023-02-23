@@ -22,9 +22,9 @@ namespace Peluches.BackOffice.Presentacion.Models
         public int? Stock { get; set; }
         public bool? Activo { get; set; }
 
-        public virtual Marca IdMarcaNavigation { get; set; }
-        public virtual Modelo IdModeloNavigation { get; set; }
-        public virtual Proveedor IdProveedorNavigation { get; set; }
+        public virtual Marca Marca { get; set; }
+        public virtual Modelo Modelo { get; set; }
+        public virtual Proveedor Proveedor { get; set; }
         public virtual ICollection<DetallePedido> DetallePedidos { get; set; }
     }
 }
