@@ -68,9 +68,9 @@ namespace Peluches.BackOffice.Presentacion.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdMarca"] = new SelectList(_context.Marcas, "IdMarca", "IdMarca", producto.IdMarca);
-            ViewData["IdModelo"] = new SelectList(_context.Modelos, "IdModelo", "IdModelo", producto.IdModelo);
-            ViewData["IdProveedor"] = new SelectList(_context.Proveedors, "IdProveedor", "IdProveedor", producto.IdProveedor);
+            ViewData["IdMarca"] = new SelectList(_context.Marcas, "IdMarca", "Marca1", producto.IdMarca);
+            ViewData["IdModelo"] = new SelectList(_context.Modelos, "IdModelo", "Modelo1", producto.IdModelo);
+            ViewData["IdProveedor"] = new SelectList(_context.Proveedors, "IdProveedor", "NombresProv", producto.IdProveedor);
             return View(producto);
         }
 
@@ -125,9 +125,9 @@ namespace Peluches.BackOffice.Presentacion.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdMarca"] = new SelectList(_context.Marcas, "IdMarca", "IdMarca", producto.IdMarca);
-            ViewData["IdModelo"] = new SelectList(_context.Modelos, "IdModelo", "IdModelo", producto.IdModelo);
-            ViewData["IdProveedor"] = new SelectList(_context.Proveedors, "IdProveedor", "IdProveedor", producto.IdProveedor);
+            ViewData["IdMarca"] = new SelectList(_context.Marcas, "IdMarca", "Marca1", producto.IdMarca);
+            ViewData["IdModelo"] = new SelectList(_context.Modelos, "IdModelo", "Modelo1", producto.IdModelo);
+            ViewData["IdProveedor"] = new SelectList(_context.Proveedors, "IdProveedor", "NombresProv", producto.IdProveedor);
             return View(producto);
         }
 
