@@ -55,7 +55,7 @@
                 @Html.DisplayFor(modelItem => item.Stock)
             </td>
             <td>
-                @Html.CheckBoxFor(modelItem => item.Activo.HasValue, new { @disabled = "true"})
+                @Html.CheckBoxFor(modelItem => item.Activo, new { @disabled = "true"})
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Marca.Marca1)
