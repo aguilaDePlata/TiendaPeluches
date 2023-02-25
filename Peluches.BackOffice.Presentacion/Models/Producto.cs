@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Peluches.BackOffice.Presentacion.Validaciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -39,10 +40,11 @@ namespace Peluches.BackOffice.Presentacion.Models
         [Display(Name = "Proveedor")]
         public int? IdProveedor { get; set; }
 
-        [Required(ErrorMessage = "Ingrese un stock mayor a cero.")]
+        [Required(ErrorMessage = "Ingrese cantidad de stock.")]
+        [Range(1, 2000, ErrorMessage = "Debe ingresar un valor entre 1 y 2000.")]
         public int? Stock { get; set; }
 
-        public bool? Activo { get; set; }
+        public bool Activo { get; set; }
 
         public virtual Marca Marca { get; set; }
         public virtual Modelo Modelo { get; set; }
