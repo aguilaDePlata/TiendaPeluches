@@ -73,7 +73,7 @@
                 @Html.DisplayFor(modelItem => item.FechaContrato)
             </td>
             <td>
-                @Html.CheckBoxFor(modelItem => item.Activo.HasValue, new { @disabled = "true" })
+                @Html.CheckBoxFor(modelItem => item.Activo, new { @disabled = "true" })
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IdCargoNavigation.Cargo1)

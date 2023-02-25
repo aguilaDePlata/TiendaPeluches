@@ -32,7 +32,7 @@ namespace Peluches.BackOffice.Presentacion.Models
         public string Telefono { get; set; }
 
         [Display(Name = "Activo")]
-        public bool? Activo { get; set; }
+        public bool Activo { get; set; }
 
         public virtual ICollection<Producto> Productos { get; set; }
     }

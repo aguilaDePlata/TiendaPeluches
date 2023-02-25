@@ -26,8 +26,8 @@ namespace Peluches.BackOffice.Presentacion
         {
             services.AddControllersWithViews();
             //services.AddDbContext<C3_BD_PEDIDOSContext>(opciones => opciones.UseSqlServer(Configuration.GetConnectionString("C3_BD_PEDIDOSContext")));
-            //services.AddDbContext<C3_BD_PEDIDOSContext>(opciones => opciones.UseSqlServer(Configuration.GetConnectionString("C3_BD_PEDIDOSContext_Nicole")));
-            services.AddDbContext<C3_BD_PEDIDOSContext>(opciones => opciones.UseSqlServer(Configuration.GetConnectionString("C3_BD_PEDIDOSContext_Fabian")));
+            services.AddDbContext<C3_BD_PEDIDOSContext>(opciones => opciones.UseSqlServer(Configuration.GetConnectionString("C3_BD_PEDIDOSContext_Nicole")));
+            //services.AddDbContext<C3_BD_PEDIDOSContext>(opciones => opciones.UseSqlServer(Configuration.GetConnectionString("C3_BD_PEDIDOSContext_Fabian")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

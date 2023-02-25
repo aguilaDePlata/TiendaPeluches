@@ -43,8 +43,8 @@ namespace Peluches.BackOffice.Presentacion.Models
         [Display(Name = "Teléfono")]
         public string Telefono { get; set; }
 
-        [Display(Name = "Teléfono")]
-        public bool? Activo { get; set; }
+
+        public bool Activo { get; set; }
 
         public virtual ICollection<Pedido> Pedidos { get; set; }
     }
