@@ -33,6 +33,7 @@ namespace Peluches.BackOffice.Presentacion.Models
         [Display(Name = "Valor Total")]
         public decimal? ValorTotal { get; set; }
 
+        [Display(Name = "Activo")]
         public bool? Activo { get; set; }
 
         public virtual Cliente IdClienteNavigation { get; set; }

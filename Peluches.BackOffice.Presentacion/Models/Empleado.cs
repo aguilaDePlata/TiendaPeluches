@@ -49,6 +49,8 @@ namespace Peluches.BackOffice.Presentacion.Models
 
         [Display(Name = "Fecha de Contrato")]
         public DateTime? FechaContrato { get; set; }
+
+        [Display(Name = "Activo")]
         public bool? Activo { get; set; }
 
         public virtual Cargo IdCargoNavigation { get; set; }

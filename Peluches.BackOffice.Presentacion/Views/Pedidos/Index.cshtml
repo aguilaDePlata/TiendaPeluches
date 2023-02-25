@@ -46,7 +46,7 @@
                 @Html.DisplayFor(modelItem => item.ValorTotal)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Activo)
+                @Html.CheckBoxFor(modelItem => item.Activo.HasValue, new { @disabled = "true" })
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IdClienteNavigation.NroDocumento)

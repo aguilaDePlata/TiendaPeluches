@@ -42,6 +42,8 @@ namespace Peluches.BackOffice.Presentacion.Models
         [Required(ErrorMessage = "El campo 'Teléfono' es obligatorio.")]
         [Display(Name = "Teléfono")]
         public string Telefono { get; set; }
+
+        [Display(Name = "Teléfono")]
         public bool? Activo { get; set; }
 
         public virtual ICollection<Pedido> Pedidos { get; set; }
