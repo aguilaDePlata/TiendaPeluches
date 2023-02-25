@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -13,12 +14,25 @@ namespace Peluches.BackOffice.Presentacion.Models
             DetallePedidos = new HashSet<DetallePedido>();
         }
 
+
         public int IdPedido { get; set; }
+
+        [Required(ErrorMessage = "El campo 'ID Cliente' es obligatorio.")]
+        [Display(Name = "ID Cliente")]
         public int? IdCliente { get; set; }
+        [Required(ErrorMessage = "El campo 'ID Empleado' es obligatorio.")]
+        [Display(Name = "ID Empleado")]
         public int? IdEmpleado { get; set; }
+
+        [Display(Name = "Fecha de Pedido")]
         public DateTime? FechaPedido { get; set; }
+
+        [Display(Name = "Fecha máxima de entrega")]
         public DateTime? FechaMaxEntrega { get; set; }
+
+        [Display(Name = "Valor Total")]
         public decimal? ValorTotal { get; set; }
+
         public bool? Activo { get; set; }
 
         public virtual Cliente IdClienteNavigation { get; set; }
