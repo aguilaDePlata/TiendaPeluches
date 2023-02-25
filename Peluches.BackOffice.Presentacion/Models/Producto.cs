@@ -15,15 +15,15 @@ namespace Peluches.BackOffice.Presentacion.Models
 
         public int IdProducto { get; set; }
 
-        [Required(ErrorMessage = "El campo nombre de producto es obligatorio.")]
+        [Required(ErrorMessage = "El campo 'Nombre de Producto' es obligatorio.")]
         [Display(Name = "Nombre de Producto")]
         public string NombreProducto { get; set; }
 
-        [Required(ErrorMessage = "El campo descripción es obligatorio.")]
+        [Required(ErrorMessage = "El campo 'Descripción' es obligatorio.")]
         [Display(Name = "Especificaciones Técnicas del Producto")]
         public string Descripcion { get; set; }
 
-        [Required(ErrorMessage = "El campo precio de venta es obligatorio.")]
+        [Required(ErrorMessage = "El campo 'Precio de venta' es obligatorio.")]
         [Display (Name = "Precio de Venta")]
         public decimal? PrecioVenta { get; set; }
 

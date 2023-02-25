@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -13,14 +14,40 @@ namespace Peluches.BackOffice.Presentacion.Models
         }
 
         public int IdEmpleado { get; set; }
+
+        [Required(ErrorMessage = "El campo 'Nombres' es obligatorio.")]
+        [Display(Name = "Nombres")]
         public string Nombres { get; set; }
+
+        [Required(ErrorMessage = "El campo 'Apellidos' es obligatorio.")]
+        [Display(Name = "Apellidos")]
         public string Apellidos { get; set; }
+
+        [Required(ErrorMessage = "El campo 'DNI' es obligatorio.")]
+        [Display(Name = "DNI")]
         public int? Dni { get; set; }
+
+        [Required(ErrorMessage = "El campo 'Dirección' es obligatorio.")]
+        [Display(Name = "Dirección")]
         public string Direccion { get; set; }
+
+        [Required(ErrorMessage = "El campo 'Distrito' es obligatorio.")]
+        [Display(Name = "Distrito")]
         public string Distrito { get; set; }
+
+        [Required(ErrorMessage = "El campo 'Edad' es obligatorio.")]
+        [Display(Name = "Edad")]
         public int? Edad { get; set; }
+
+        [Required(ErrorMessage = "El campo 'Teléfono' es obligatorio.")]
+        [Display(Name = "Teléfono")]
         public string Telefono { get; set; }
+
+
+        [Display(Name = "Cargo")]
         public int? IdCargo { get; set; }
+
+        [Display(Name = "Fecha de Contrato")]
         public DateTime? FechaContrato { get; set; }
         public bool? Activo { get; set; }
 
