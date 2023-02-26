@@ -24,7 +24,6 @@ namespace Peluches.BackOffice.Presentacion.Models
         [Display(Name = "Especificaciones Técnicas del Producto")]
         public string Descripcion { get; set; }
 
-        //[Required(ErrorMessage = "El campo precio de venta es obligatorio.")]
         [Display(Name = "Precio de Venta")]
         [ValidaPrecio]
         public decimal? PrecioVenta { get; set; }

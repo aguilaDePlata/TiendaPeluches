@@ -2,76 +2,93 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = "_LayoutBackOffice";
 }
 
-<h1>Inicio</h1>
+<section class="content-header">
+    <h1>
+        Inicio
+        <small>Listado</small>
+    </h1>
+    <p>
+        <a asp-action="Create">Crear Nuevo</a>
+    </p>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Productos</li>
+    </ol>
+</section>
 
-<p>
-    <a asp-action="Create">Crear Nuevo</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NombreProducto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descripcion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PrecioVenta)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Stock)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Activo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Marca)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Modelo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Proveedor)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombreProducto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PrecioVenta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Stock)
-            </td>
-            <td>
-                @Html.CheckBoxFor(modelItem => item.Activo, new { @disabled = "true"})
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Marca.Marca1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Modelo.Modelo1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Proveedor.NombresProv)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdProducto">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.IdProducto">Detalles</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdProducto">Eliminar</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<section class="content">
+    <div class="table-responsive-md">
+        <table class="table table-hover table-dark">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NombreProducto)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Descripcion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PrecioVenta)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Stock)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Activo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Marca)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Modelo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Proveedor)
+                    </th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NombreProducto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descripcion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PrecioVenta)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Stock)
+                        </td>
+                        <td>
+                            @Html.CheckBoxFor(modelItem => item.Activo, new { @disabled = "true" })
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Marca.Marca1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Modelo.Modelo1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Proveedor.NombresProv)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.IdProducto"><i class="fa-solid fa-file-pen"></i></a> |
+                            <a asp-action="Details" asp-route-id="@item.IdProducto"><i class="fa-solid fa-eye"></i></a> |
+                            <a asp-action="Delete" asp-route-id="@item.IdProducto"><i class="fa-solid fa-trash-can"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
