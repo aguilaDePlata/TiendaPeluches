@@ -16,11 +16,11 @@ namespace Peluches.BackOffice.Presentacion.Models
 
         public int IdProducto { get; set; }
 
-        [Required(AllowEmptyStrings = true, ErrorMessage = "El campo nombre de producto es obligatorio.")]
+        [Required(ErrorMessage = "El campo 'Nombre de Producto' es obligatorio.")]
         [Display(Name = "Nombre de Producto")]
         public string NombreProducto { get; set; }
 
-        [Required(AllowEmptyStrings = true, ErrorMessage = "El campo descripción es obligatorio.")]
+        [Required(ErrorMessage = "El campo 'Descripción' es obligatorio.")]
         [Display(Name = "Especificaciones Técnicas del Producto")]
         public string Descripcion { get; set; }
 

@@ -1,21 +1,20 @@
-﻿@model Peluches.BackOffice.Presentacion.Models.Cliente
+﻿@model Peluches.BackOffice.Presentacion.Models.Empleado
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Details";
 }
 
-<h1>Eliminar</h1>
+<h1>Detalles</h1>
 
-<h3>¿Estás segura de que quieres eliminar esto?</h3>
 <div>
-    <h4>Cliente</h4>
+    <h4>Empleado</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nombre)
+            @Html.DisplayNameFor(model => model.Nombres)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nombre)
+            @Html.DisplayFor(model => model.Nombres)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Apellidos)
@@ -24,16 +23,10 @@
             @Html.DisplayFor(model => model.Apellidos)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TipoCliente)
+            @Html.DisplayNameFor(model => model.Dni)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TipoCliente)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NroDocumento)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NroDocumento)
+            @Html.DisplayFor(model => model.Dni)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Direccion)
@@ -48,10 +41,22 @@
             @Html.DisplayFor(model => model.Distrito)
         </dd>
         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Edad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Edad)
+        </dd>
+        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Telefono)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Telefono)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaContrato)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaContrato)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Activo)
@@ -59,11 +64,15 @@
         <dd class="col-sm-10">
             @Html.CheckBoxFor(model => model.Activo, new { @disabled = "true" })
         </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdCargoNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdCargoNavigation.Cargo1)
+        </dd>
     </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="IdCliente" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Volver al Listado</a>
-    </form>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdEmpleado">Editar</a> |
+    <a asp-action="Index">Volver al listado</a>
 </div>

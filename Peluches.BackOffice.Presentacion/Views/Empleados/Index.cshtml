@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Peluches.BackOffice.Presentacion.Models.Cliente>
+﻿@model IEnumerable<Peluches.BackOffice.Presentacion.Models.Empleado>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,16 +13,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Nombre)
+                @Html.DisplayNameFor(model => model.Nombres)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Apellidos)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TipoCliente)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NroDocumento)
+                @Html.DisplayNameFor(model => model.Dni)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Direccion)
@@ -31,10 +28,19 @@
                 @Html.DisplayNameFor(model => model.Distrito)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Edad)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Telefono)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.FechaContrato)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Activo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCargoNavigation)
             </th>
             <th></th>
         </tr>
@@ -43,16 +49,13 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
+                @Html.DisplayFor(modelItem => item.Nombres)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Apellidos)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TipoCliente)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NroDocumento)
+                @Html.DisplayFor(modelItem => item.Dni)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Direccion)
@@ -61,15 +64,24 @@
                 @Html.DisplayFor(modelItem => item.Distrito)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Edad)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaContrato)
             </td>
             <td>
                 @Html.CheckBoxFor(modelItem => item.Activo, new { @disabled = "true" })
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IdCliente">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.IdCliente">Detalles</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdCliente">Eliminar</a>
+                @Html.DisplayFor(modelItem => item.IdCargoNavigation.Cargo1)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdEmpleado">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.IdEmpleado">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdEmpleado">Eliminar</a>
             </td>
         </tr>
 }

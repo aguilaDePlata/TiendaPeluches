@@ -11,7 +11,7 @@ namespace Peluches.BackOffice.Presentacion.Models
         public int IdUsuario { get; set; }
 
         [Required(ErrorMessage = "El campo 'ID usuario' es obligatorio.")]
-        [Display(Name = "ID Empleado")]
+        [Display(Name = "ID Usuario")]
         public int? IdEmpleado { get; set; }
 
         [Required(ErrorMessage = "El campo 'Nombre de usuario' es obligatorio.")]
