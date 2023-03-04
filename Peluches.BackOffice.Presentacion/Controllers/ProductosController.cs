@@ -21,7 +21,7 @@ namespace Peluches.BackOffice.Presentacion.Controllers
         // GET: Productos
         public async Task<IActionResult> Index()
         {
-            var c3_BD_PEDIDOSContext = _context.Productos.Include(p => p.IdMarcaNavigation).Include(p => p.IdModeloNavigation).Include(p => p.IdProveedorNavigation);
+            var c3_BD_PEDIDOSContext = _context.Productos.Include(p => p.Marca).Include(p => p.Modelo).Include(p => p.Proveedor);
             return View(await c3_BD_PEDIDOSContext.ToListAsync());
         }
 
@@ -34,9 +34,9 @@ namespace Peluches.BackOffice.Presentacion.Controllers
             }
 
             var producto = await _context.Productos
-                .Include(p => p.IdMarcaNavigation)
-                .Include(p => p.IdModeloNavigation)
-                .Include(p => p.IdProveedorNavigation)
+                .Include(p => p.Marca)
+                .Include(p => p.Modelo)
+                .Include(p => p.Proveedor)
                 .FirstOrDefaultAsync(m => m.IdProducto == id);
             if (producto == null)
             {
@@ -49,9 +49,9 @@ namespace Peluches.BackOffice.Presentacion.Controllers
         // GET: Productos/Create
         public IActionResult Create()
         {
-            ViewData["IdMarca"] = new SelectList(_context.Marcas, "IdMarca", "IdMarca");
-            ViewData["IdModelo"] = new SelectList(_context.Modelos, "IdModelo", "IdModelo");
-            ViewData["IdProveedor"] = new SelectList(_context.Proveedors, "IdProveedor", "IdProveedor");
+            ViewData["IdMarca"] = new SelectList(_context.Marcas, "IdMarca", "Marca1");
+            ViewData["IdModelo"] = new SelectList(_context.Modelos, "IdModelo", "Modelo1");
+            ViewData["IdProveedor"] = new SelectList(_context.Proveedors, "IdProveedor", "NombresProv");
             return View();
         }
 
@@ -68,9 +68,9 @@ namespace Peluches.BackOffice.Presentacion.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdMarca"] = new SelectList(_context.Marcas, "IdMarca", "IdMarca", producto.IdMarca);
-            ViewData["IdModelo"] = new SelectList(_context.Modelos, "IdModelo", "IdModelo", producto.IdModelo);
-            ViewData["IdProveedor"] = new SelectList(_context.Proveedors, "IdProveedor", "IdProveedor", producto.IdProveedor);
+            ViewData["IdMarca"] = new SelectList(_context.Marcas, "IdMarca", "Marca1", producto.IdMarca);
+            ViewData["IdModelo"] = new SelectList(_context.Modelos, "IdModelo", "Modelo1", producto.IdModelo);
+            ViewData["IdProveedor"] = new SelectList(_context.Proveedors, "IdProveedor", "NombresProv", producto.IdProveedor);
             return View(producto);
         }
 
@@ -87,9 +87,9 @@ namespace Peluches.BackOffice.Presentacion.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdMarca"] = new SelectList(_context.Marcas, "IdMarca", "IdMarca", producto.IdMarca);
-            ViewData["IdModelo"] = new SelectList(_context.Modelos, "IdModelo", "IdModelo", producto.IdModelo);
-            ViewData["IdProveedor"] = new SelectList(_context.Proveedors, "IdProveedor", "IdProveedor", producto.IdProveedor);
+            ViewData["IdMarca"] = new SelectList(_context.Marcas, "IdMarca", "Marca1", producto.IdMarca);
+            ViewData["IdModelo"] = new SelectList(_context.Modelos, "IdModelo", "Modelo1", producto.IdModelo);
+            ViewData["IdProveedor"] = new SelectList(_context.Proveedors, "IdProveedor", "NombresProv", producto.IdProveedor);
             return View(producto);
         }
 
@@ -125,9 +125,9 @@ namespace Peluches.BackOffice.Presentacion.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdMarca"] = new SelectList(_context.Marcas, "IdMarca", "IdMarca", producto.IdMarca);
-            ViewData["IdModelo"] = new SelectList(_context.Modelos, "IdModelo", "IdModelo", producto.IdModelo);
-            ViewData["IdProveedor"] = new SelectList(_context.Proveedors, "IdProveedor", "IdProveedor", producto.IdProveedor);
+            ViewData["IdMarca"] = new SelectList(_context.Marcas, "IdMarca", "Marca1", producto.IdMarca);
+            ViewData["IdModelo"] = new SelectList(_context.Modelos, "IdModelo", "Modelo1", producto.IdModelo);
+            ViewData["IdProveedor"] = new SelectList(_context.Proveedors, "IdProveedor", "NombresProv", producto.IdProveedor);
             return View(producto);
         }
 
@@ -140,9 +140,9 @@ namespace Peluches.BackOffice.Presentacion.Controllers
             }
 
             var producto = await _context.Productos
-                .Include(p => p.IdMarcaNavigation)
-                .Include(p => p.IdModeloNavigation)
-                .Include(p => p.IdProveedorNavigation)
+                .Include(p => p.Marca)
+                .Include(p => p.Modelo)
+                .Include(p => p.Proveedor)
                 .FirstOrDefaultAsync(m => m.IdProducto == id);
             if (producto == null)
             {

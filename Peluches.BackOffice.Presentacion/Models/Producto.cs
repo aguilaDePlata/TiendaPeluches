@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Peluches.BackOffice.Presentacion.Validaciones;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -13,18 +15,41 @@ namespace Peluches.BackOffice.Presentacion.Models
         }
 
         public int IdProducto { get; set; }
-        public string NombreProducto { get; set; }
-        public string Descripcion { get; set; }
-        public decimal? PrecioVenta { get; set; }
-        public int? IdMarca { get; set; }
-        public int? IdModelo { get; set; }
-        public int? IdProveedor { get; set; }
-        public int? Stock { get; set; }
-        public bool? Activo { get; set; }
 
-        public virtual Marca IdMarcaNavigation { get; set; }
-        public virtual Modelo IdModeloNavigation { get; set; }
-        public virtual Proveedor IdProveedorNavigation { get; set; }
+        [Required(ErrorMessage = "El campo 'Nombre de Producto' es obligatorio.")]
+        [Display(Name = "Nombre de Producto")]
+        public string NombreProducto { get; set; }
+
+        [Required(ErrorMessage = "El campo 'Descripción' es obligatorio.")]
+        [Display(Name = "Especificaciones Técnicas del Producto")]
+        public string Descripcion { get; set; }
+
+        [Display(Name = "Precio de Venta")]
+        [ValidaPrecio]
+        public decimal? PrecioVenta { get; set; }
+
+        [Required(ErrorMessage = "Seleccione una marca.")]
+        [Display(Name = "Marca")]
+        public int? IdMarca { get; set; }
+
+        [Required(ErrorMessage = "Seleccione un modelo.")]
+        [Display(Name = "Modelo")]
+        public int? IdModelo { get; set; }
+
+        [Required(ErrorMessage = "Seleccione una proveedor.")]
+        [Display(Name = "Proveedor")]
+        public int? IdProveedor { get; set; }
+
+        [Required(ErrorMessage = "Ingrese cantidad de stock.")]
+        [Range(1, 2000, ErrorMessage = "Debe ingresar un valor entre 1 y 2000.")]
+        public int? Stock { get; set; }
+
+        [Display(Name = "Estado")]
+        public bool Activo { get; set; }
+
+        public virtual Marca Marca { get; set; }
+        public virtual Modelo Modelo { get; set; }
+        public virtual Proveedor Proveedor { get; set; }
         public virtual ICollection<DetallePedido> DetallePedidos { get; set; }
     }
 }

@@ -277,17 +277,17 @@ namespace Peluches.BackOffice.Presentacion.Models
                     .HasColumnType("decimal(10, 2)")
                     .HasColumnName("Precio_Venta");
 
-                entity.HasOne(d => d.IdMarcaNavigation)
+                entity.HasOne(d => d.Marca)
                     .WithMany(p => p.Productos)
                     .HasForeignKey(d => d.IdMarca)
                     .HasConstraintName("FK_Producto_Marca");
 
-                entity.HasOne(d => d.IdModeloNavigation)
+                entity.HasOne(d => d.Modelo)
                     .WithMany(p => p.Productos)
                     .HasForeignKey(d => d.IdModelo)
                     .HasConstraintName("FK_Producto_Modelo");
 
-                entity.HasOne(d => d.IdProveedorNavigation)
+                entity.HasOne(d => d.Proveedor)
                     .WithMany(p => p.Productos)
                     .HasForeignKey(d => d.IdProveedor)
                     .HasConstraintName("FK_Producto_Proveedor");

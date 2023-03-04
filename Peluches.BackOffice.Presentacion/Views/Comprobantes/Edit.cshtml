@@ -1,0 +1,61 @@
+﻿@model Peluches.BackOffice.Presentacion.Models.Comprobante
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<h4>Comprobante</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdComprobante" />
+            <div class="form-group">
+                <label asp-for="IdPedido" class="control-label"></label>
+                <select asp-for="IdPedido" class="form-control" asp-items="ViewBag.IdPedido"></select>
+                <span asp-validation-for="IdPedido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoComprobante" class="control-label"></label>
+                <input asp-for="TipoComprobante" class="form-control" />
+                <span asp-validation-for="TipoComprobante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaEmision" class="control-label"></label>
+                <input asp-for="FechaEmision" class="form-control" />
+                <span asp-validation-for="FechaEmision" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubtotalComp" class="control-label"></label>
+                <input asp-for="SubtotalComp" class="form-control" />
+                <span asp-validation-for="SubtotalComp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descuento" class="control-label"></label>
+                <input asp-for="Descuento" class="form-control" />
+                <span asp-validation-for="Descuento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Igv" class="control-label"></label>
+                <input asp-for="Igv" class="form-control" />
+                <span asp-validation-for="Igv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorTotal" class="control-label"></label>
+                <input asp-for="ValorTotal" class="form-control" />
+                <span asp-validation-for="ValorTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver al listado</a>
+</div>
+
