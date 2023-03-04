@@ -18,8 +18,8 @@ namespace Peluches.BackOffice.Presentacion.Models
         [Required(ErrorMessage = "El campo 'Nombre de proveedor' es obligatorio.")]
         [Display(Name = "Nombre de Proveedor")]
         public string NombresProv { get; set; }
-        [Required(ErrorMessage = "El campo 'Apellido' es obligatorio.")]
-        [Display(Name = "Apellido")]
+        [Required(ErrorMessage = "El campo 'Apellidos' es obligatorio.")]
+        [Display(Name = "Apellidos")]
         public string ApellidosProv { get; set; }
         [Required(ErrorMessage = "El campo 'Dirección' es obligatorio.")]
         [Display(Name = "Dirección")]
