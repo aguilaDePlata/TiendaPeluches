@@ -7,87 +7,124 @@
 
 <section class="content-header">
     <h1>
-        Inicio
-        <small>Listado</small>
+        Listado de Productos
+        <small>Inicio</small>
     </h1>
+    <br />
     <p>
-        <a asp-action="Create">Crear Nuevo</a>
+        <a asp-controller="Productos" asp-action="Create" class="btn btn-primary pull-left">
+            <i class="fa fa-file-text" aria-hidden="true"></i> Crear Nuevo
+        </a>
     </p>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Productos</li>
+        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
     </ol>
 </section>
 
 <section class="content">
-    <div class="table-responsive-md">
-        <table class="table table-hover table-dark">
-            <thead>
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.NombreProducto)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Descripcion)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.PrecioVenta)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Stock)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Activo)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Marca)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Modelo)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Proveedor)
-                    </th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.NombreProducto)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Descripcion)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.PrecioVenta)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Stock)
-                        </td>
-                        <td>
-                            @Html.CheckBoxFor(modelItem => item.Activo, new { @disabled = "true" })
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Marca.Marca1)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Modelo.Modelo1)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Proveedor.NombresProv)
-                        </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.IdProducto"><i class="fa-solid fa-file-pen"></i></a> |
-                            <a asp-action="Details" asp-route-id="@item.IdProducto"><i class="fa-solid fa-eye"></i></a> |
-                            <a asp-action="Delete" asp-route-id="@item.IdProducto"><i class="fa-solid fa-trash-can"></i></a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Filtrar</h3>
+                    <div class="box-tools">
+                        <div class="input-group input-group-sm" style="width: 250px;">
+                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Palabra clave">
+
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.NombreProducto)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Descripcion)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PrecioVenta)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Stock)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Activo)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Marca)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Modelo)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Proveedor)
+                                </th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NombreProducto)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Descripcion)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PrecioVenta)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Stock)
+                                    </td>
+                                    <td>
+                                        @if (item.Activo)
+                                        {
+                                            <span class="label label-success">Activo</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="label label-danger">Inactivo</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Marca.Marca1)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Modelo.Modelo1)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Proveedor.NombresProv)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.IdProducto" placeholder="prueba"><i class="fa fa-pencil-square" aria-hidden="true"></i></a> |
+                                        <a asp-action="Details" asp-route-id="@item.IdProducto"><i class="fa fa-eye" aria-hidden="true"></i></a> |
+                                        <a asp-action="Delete" asp-route-id="@item.IdProducto"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="box-footer clearfix">
+                    <ul class="pagination pagination-sm no-margin pull-right">
+                        <li><a href="#">&laquo;</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+                </div>
+            </div>            
+        </div>
     </div>
 </section>
 

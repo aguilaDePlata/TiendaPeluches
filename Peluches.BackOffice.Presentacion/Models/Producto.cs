@@ -44,6 +44,7 @@ namespace Peluches.BackOffice.Presentacion.Models
         [Range(1, 2000, ErrorMessage = "Debe ingresar un valor entre 1 y 2000.")]
         public int? Stock { get; set; }
 
+        [Display(Name = "Estado")]
         public bool Activo { get; set; }
 
         public virtual Marca Marca { get; set; }

@@ -33,7 +33,7 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition skin-green sidebar-mini sidebar-collapse">
+<body class="hold-transition skin-purple sidebar-mini sidebar-collapse">
     <div class="wrapper">
         <!--creacion de la cabecera de la pagina web-->
         <header class="main-header">
@@ -162,14 +162,14 @@
                 </div>
                 <ul class="sidebar-menu">
                     <li class="active">
-                        <a href="inicio">
-                            <i class="fa fa-home"></i>
+                        <a asp-controller="Home" asp-action="Index">
+                            <i class="fa fa-area-chart" aria-hidden="true"></i>
                             <span>Inicio</span>
                         </a>
                     </li>
                     <li>
                         <a asp-controller="Productos" asp-action="Index">
-                            <i class="fa fa-product-hunt"></i>
+                            <i class="fa fa-cubes" aria-hidden="true"></i>
                             <span>Productos</span>
                         </a>
                     </li>
@@ -181,52 +181,28 @@
                     </li>
                     <li>
                         <a asp-controller="Proveedores" asp-action="Index">
-                            <i class="fa fa-product-hunt"></i>
+                            <i class="fa fa-ship" aria-hidden="true"></i>
                             <span>Proveedores</span>
                         </a>
                     </li>
                     <li>
                         <a asp-controller="Modelos" asp-action="Index">
-                            <i class="fa fa-user"></i>
+                            <i class="fa fa-th" aria-hidden="true"></i>
                             <span>Modelos</span>
                         </a>
                     </li>
                     <li>
                         <a asp-controller="Marcas" asp-action="Index">
-                            <i class="fa fa-th"></i>
+                            <i class="fa fa-first-order" aria-hidden="true"></i>
                             <span>Marcas</span>
                         </a>
                     </li>
-
-                    @*<li class="treeview">
-            <a href="#">
-                <i class="fa fa-list-ul"></i>
-                <span>Ventas</span>
-                <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                </span>
-            </a>
-            <ul class="treeview-menu">
-                <li>
-                    <a href="ventas">
-                        <i class="fa fa-circle-o"></i>
-                        <span>Administrar Ventas</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="crear-ventas">
-                        <i class="fa fa-circle-o"></i>
-                        <span>Crear Ventas</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="reportes">
-                        <i class="fa fa-circle-o"></i>
-                        <span>Reporte de Ventas</span>
-                    </a>
-                </li>
-            </ul>
-        </li>*@
+                    <li>
+                        <a asp-controller="Usuarios" asp-action="Index">
+                            <i class="fa fa-user"></i>
+                            <span>Usuarios</span>
+                        </a>
+                    </li>
                 </ul>
             </section>
         </aside>
@@ -236,18 +212,13 @@
         <div class="content-wrapper">
             @RenderBody()
         </div>
-        @*<div class="container">
-                <main role="main" class="pb-3 shadow p-3 mb-5 bg-white rounded">
-                    @RenderBody()
-                </main>
-            </div>*@
 
         <!--inicio del footer-->
         <footer class="main-footer">
             <div class="pull-right hidden-xs">
-                <b>Version</b> 2.4.0
+                <b>Version</b> 1.0.0
             </div>
-            <strong>Copyright &copy; 2014-2023 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+            <strong>Copyright &copy; 2023 <a href="https://adminlte.io">BackOffice - Peluches el Chino</a>.</strong> All rights
             reserved.
         </footer>
         <!--fin del footer-->

@@ -46,7 +46,7 @@ namespace Peluches.Ecommerce
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Ecommerce}/{action=Index}/{id?}");
             });
         }
     }
