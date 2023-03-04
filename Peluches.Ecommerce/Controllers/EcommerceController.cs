@@ -22,5 +22,20 @@ namespace Peluches.Ecommerce.Controllers
         {
             return View();
         }
+
+        public IActionResult CarroCompras()
+        {
+            return View();
+        }
+
+        public IActionResult PagarCompra()
+        {
+            return View();
+        }
+
+        public IActionResult ConfirmacionPago()
+        {
+            return View();
+        }
     }
 }
