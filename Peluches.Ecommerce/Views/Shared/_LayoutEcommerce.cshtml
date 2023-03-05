@@ -46,13 +46,13 @@
                     <div class="logo text-center">
                         <a asp-controller="Ecommerce" asp-action="Index">
                             <!-- replace logo here -->
-                            <svg width="135px" height="29px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            <svg width="250px" height="29px" viewBox="20 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                  xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="40"
                                    font-family="AustinBold, Austin" font-weight="bold">
                                     <g id="Group" transform="translate(-108.000000, -297.000000)" fill="#000000">
                                         <text id="AVIATO">
-                                            <tspan x="108.94" y="325">ELCHINO</tspan>
+                                            <tspan x="108.94" y="325">EL CHINO</tspan>
                                         </text>
                                     </g>
                                 </g>
@@ -65,7 +65,7 @@
                     <ul class="top-menu text-right list-inline">
                         <li class="dropdown cart-nav dropdown-slide">
                             <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
-                                <i class="tf-ion-android-cart"></i>Cart
+                                <i class="tf-ion-android-cart"></i>Mi Carrito
                             </a>
                             <div class="dropdown-menu cart-dropdown">
                                 <!-- Cart Item -->
@@ -74,12 +74,12 @@
                                         <img class="media-object" src="~/theme/images/shop/cart/cart-1.jpg" alt="image" />
                                     </a>
                                     <div class="media-body">
-                                        <h4 class="media-heading"><a href="#!">Ladies Bag</a></h4>
+                                        <h4 class="media-heading"><a href="#!">Iguanita</a></h4>
                                         <div class="cart-price">
                                             <span>1 x</span>
-                                            <span>1250.00</span>
+                                            <span>50.00</span>
                                         </div>
-                                        <h5><strong>$1200</strong></h5>
+                                        <h5><strong>S/ 50</strong></h5>
                                     </div>
                                     <a href="#!" class="remove"><i class="tf-ion-close"></i></a>
                                 </div><!-- / Cart Item -->
@@ -89,23 +89,23 @@
                                         <img class="media-object" src="~/theme/images/shop/cart/cart-2.jpg" alt="image" />
                                     </a>
                                     <div class="media-body">
-                                        <h4 class="media-heading"><a href="#!">Ladies Bag</a></h4>
+                                        <h4 class="media-heading"><a href="#!">Jirafa</a></h4>
                                         <div class="cart-price">
                                             <span>1 x</span>
-                                            <span>1250.00</span>
+                                            <span>50.00</span>
                                         </div>
-                                        <h5><strong>$1200</strong></h5>
+                                        <h5><strong>S/ 50</strong></h5>
                                     </div>
                                     <a href="#!" class="remove"><i class="tf-ion-close"></i></a>
                                 </div><!-- / Cart Item -->
 
                                 <div class="cart-summary">
                                     <span>Total</span>
-                                    <span class="total-price">$1799.00</span>
+                                    <span class="total-price">S/ 100.00</span>
                                 </div>
                                 <ul class="text-center cart-buttons">
-                                    <li><a asp-controller="Ecommerce" asp-action="CarroCompras" class="btn btn-small">View Cart</a></li>
-                                    <li><a asp-controller="Ecommerce" asp-action="PagarCompra" class="btn btn-small btn-solid-border">Checkout</a></li>
+                                    <li><a asp-controller="Ecommerce" asp-action="CarroCompras" class="btn btn-small">Ver Carrito</a></li>
+                                    <li><a asp-controller="Ecommerce" asp-action="PagarCompra" class="btn btn-small btn-solid-border">Comprar</a></li>
                                 </ul>
                             </div>
 
@@ -113,11 +113,11 @@
                         <!-- Search -->
                         <li class="dropdown search dropdown-slide">
                             <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
-                                <i class="tf-ion-ios-search-strong"></i> Search
+                                <i class="tf-ion-ios-search-strong"></i> Buscar
                             </a>
                             <ul class="dropdown-menu search-dropdown">
                                 <li>
-                                    <form action="post"><input type="search" class="form-control" placeholder="Search..."></form>
+                                    <form action="post"><input type="search" class="form-control" placeholder="Buscar..."></form>
                                 </li>
                             </ul>
                         </li><!-- / Search -->
@@ -180,7 +180,7 @@
 
                         <!-- Home -->
                         <li class="dropdown ">
-                            <a asp-controller="Ecommerce" asp-action="Index">Home</a>
+                            <a asp-controller="Ecommerce" asp-action="Index">Inicio</a>
                         </li><!-- / Home -->
                         <!-- Elements -->
                         <li class="dropdown dropdown-slide">
@@ -274,7 +274,7 @@
                             </div><!-- / .dropdown-menu -->
                         </li><!-- / Pages -->
                         <!-- Blog -->
-                        <li class="dropdown dropdown-slide">
+                        <!--<li class="dropdown dropdown-slide">
                             <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
                                role="button" aria-haspopup="true" aria-expanded="false">
                                 Blog <span class="tf-ion-ios-arrow-down"></span>
@@ -286,9 +286,10 @@
                                 <li><a href="blog-grid.html">Blog 2 Columns</a></li>
                                 <li><a href="blog-single.html">Blog Single</a></li>
                             </ul>
-                        </li><!-- / Blog -->
+                        </li>-->
+                        <!-- / Blog -->
                         <!-- Shop -->
-                        <li class="dropdown dropdown-slide">
+                        <!--<li class="dropdown dropdown-slide">
                             <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
                                role="button" aria-haspopup="true" aria-expanded="false">
                                 Elements <span class="tf-ion-ios-arrow-down"></span>
@@ -298,7 +299,8 @@
                                 <li><a href="buttons.html">Buttons</a></li>
                                 <li><a href="alerts.html">Alerts</a></li>
                             </ul>
-                        </li><!-- / Blog -->
+                        </li>-->
+                        <!-- / Blog -->
                     </ul><!-- / .nav .navbar-nav -->
 
                 </div>
@@ -379,16 +381,16 @@
                     </ul>
                     <ul class="footer-menu text-uppercase">
                         <li>
-                            <a href="contact.html">CONTACT</a>
+                            <a href="contact.html">Contáctenos</a>
                         </li>
                         <li>
-                            <a href="shop.html">SHOP</a>
+                            <a href="shop.html">Comprar</a>
                         </li>
                         <li>
-                            <a href="pricing.html">Pricing</a>
+                            <a href="pricing.html">Precios</a>
                         </li>
                         <li>
-                            <a href="contact.html">PRIVACY POLICY</a>
+                            <a href="contact.html">Políticas de Privacidad</a>
                         </li>
                     </ul>
                     <p class="copyright-text">Copyright &copy;2023, Designed &amp; Developed by <a href="https://themefisher.com/">IDAT students</a></p>

@@ -9,10 +9,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="content">
-                    <h1 class="page-name">Checkout</h1>
+                    <h1 class="page-name">Envió y Pago</h1>
                     <ol class="breadcrumb">
                         <li><a asp-controller="Ecommerce" asp-action="Index">Inicio</a></li>
-                        <li class="active">checkout</li>
+                        <li class="active">Envió y Pago</li>
                     </ol>
                 </div>
             </div>
@@ -83,31 +83,51 @@
                         <div class="block">
                             <h4 class="widget-title">Resumen del Pedido</h4>
                             <div class="media product-card">
-                                <a class="pull-left" href="product-single.html">
+                                <a class="pull-left" asp-controller="Ecommerce" asp-action="DetalleProducto">
                                     <img class="media-object" src="~/theme/images/shop/cart/cart-1.jpg" alt="Image" />
                                 </a>
                                 <div class="media-body">
-                                    <h4 class="media-heading"><a href="product-single.html">Ambassador Heritage 1921</a></h4>
-                                    <p class="price">1 x $249</p>
+                                    <h4 class="media-heading"><a href="product-single.html">Iguanita</a></h4>
+                                    <p class="price">1 x S/ 50</p>
+                                    <span class="remove">Eliminar</span>
+                                </div>
+                            </div>
+                            <div class="media product-card">
+                                <a class="pull-left" asp-controller="Ecommerce" asp-action="DetalleProducto">
+                                    <img class="media-object" src="~/theme/images/shop/cart/cart-2.jpg" alt="Image" />
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading"><a href="product-single.html">Jirafa</a></h4>
+                                    <p class="price">1 x S/ 50</p>
+                                    <span class="remove">Eliminar</span>
+                                </div>
+                            </div>
+                            <div class="media product-card">
+                                <a class="pull-left" asp-controller="Ecommerce" asp-action="DetalleProducto">
+                                    <img class="media-object" src="~/theme/images/shop/cart/cart-3.jpg" alt="Image" />
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading"><a href="product-single.html">Oso Mediano</a></h4>
+                                    <p class="price">1 x S/ 80</p>
                                     <span class="remove">Eliminar</span>
                                 </div>
                             </div>
                             <div class="discount-code">
-                                <p>Tiene descuento ? <a data-toggle="modal" data-target="#coupon-modal" href="#!">insértelo aquí</a></p>
+                                <p>Tiene descuento? <a data-toggle="modal" data-target="#coupon-modal" href="#!">ingréselo aquí </a></p>
                             </div>
                             <ul class="summary-prices">
                                 <li>
                                     <span>Subtotal:</span>
-                                    <span class="price">S/. 190</span>
+                                    <span class="price">S/ 180</span>
                                 </li>
                                 <li>
-                                    <span>Shipping:</span>
-                                    <span>Free</span>
+                                    <span>Envio:</span>
+                                    <span>Gratis</span>
                                 </li>
                             </ul>
                             <div class="summary-total">
                                 <span>Total</span>
-                                <span>S/. 250</span>
+                                <span>S/ 180</span>
                             </div>
                             <div class="verified-icon">
                                 <img src="~/theme/images/shop/verified.png">
@@ -126,9 +146,9 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <input class="form-control" type="text" placeholder="Enter Coupon Code">
+                        <input class="form-control" type="text" placeholder="Introduce el código de cupón">
                     </div>
-                    <button type="submit" class="btn btn-main">Apply Coupon</button>
+                    <button type="submit" class="btn btn-main">Aplicar Cupón</button>
                 </form>
             </div>
         </div>
