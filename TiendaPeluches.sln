@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.33214.272
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Peluches.BackOffice.Presentacion", "Peluches.BackOffice.Presentacion\Peluches.BackOffice.Presentacion.csproj", "{1E70436A-C20C-4597-9641-45B36D0AC4BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Peluches.Ecommerce", "Peluches.Ecommerce\Peluches.Ecommerce.csproj", "{54BE4873-6FE8-45BE-BE28-E6E85A2B02DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Peluches.Ecommerce", "Peluches.Ecommerce\Peluches.Ecommerce.csproj", "{54BE4873-6FE8-45BE-BE28-E6E85A2B02DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Peluches.Web.API", "Peluches.Web.API\Peluches.Web.API.csproj", "{95CC340C-590B-499D-ABC0-7137C4E901B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{54BE4873-6FE8-45BE-BE28-E6E85A2B02DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54BE4873-6FE8-45BE-BE28-E6E85A2B02DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54BE4873-6FE8-45BE-BE28-E6E85A2B02DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95CC340C-590B-499D-ABC0-7137C4E901B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95CC340C-590B-499D-ABC0-7137C4E901B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95CC340C-590B-499D-ABC0-7137C4E901B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95CC340C-590B-499D-ABC0-7137C4E901B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
