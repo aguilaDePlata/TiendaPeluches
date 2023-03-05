@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Peluches.Web.API.Models;
-using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
+// Add services to the container.
 builder.Services.AddControllers();
-builder.Services.AddDbContext<C3BdPedidosContext>(opciones => opciones.UseSqlServer(Configuration.GetConnectionString("C3_BD_PEDIDOSContext")));
+
+builder.Services.AddDbContext<C3BdPedidosContext>(opciones => opciones.UseSqlServer(builder.Configuration.GetConnectionString("C3_BD_PEDIDOSContext")));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
