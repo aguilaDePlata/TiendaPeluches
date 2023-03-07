@@ -25,8 +25,8 @@ namespace Peluches.BackOffice.Presentacion
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<C3_BD_PEDIDOSContext>(opciones => opciones.UseSqlServer(Configuration.GetConnectionString("C3_BD_PEDIDOSContext")));
-            //services.AddDbContext<C3_BD_PEDIDOSContext>(opciones => opciones.UseSqlServer(Configuration.GetConnectionString("C3_BD_PEDIDOSContext_Nicole")));
+            //services.AddDbContext<C3_BD_PEDIDOSContext>(opciones => opciones.UseSqlServer(Configuration.GetConnectionString("C3_BD_PEDIDOSContext")));
+            services.AddDbContext<C3_BD_PEDIDOSContext>(opciones => opciones.UseSqlServer(Configuration.GetConnectionString("C3_BD_PEDIDOSContext_Nicole")));
             //services.AddDbContext<C3_BD_PEDIDOSContext>(opciones => opciones.UseSqlServer(Configuration.GetConnectionString("C3_BD_PEDIDOSContext_Fabian")));
         }
 
