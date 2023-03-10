@@ -9,7 +9,7 @@ using Peluches.Web.API.Models;
 
 namespace Peluches.Web.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/products")]
     [ApiController]
     public class ProductosController : ControllerBase
     {
@@ -22,13 +22,15 @@ namespace Peluches.Web.API.Controllers
 
         // GET: api/Productos
         [HttpGet]
+        [Route("getAll")]
         public async Task<ActionResult<IEnumerable<Producto>>> GetProductos()
         {
             return await _context.Productos.ToListAsync();
         }
 
         // GET: api/Productos/5
-        [HttpGet("{id}")]
+        [HttpGet]
+        [Route("get/{idProducto}")]
         public async Task<ActionResult<Producto>> GetProducto(int id)
         {
             var producto = await _context.Productos.FindAsync(id);
@@ -43,7 +45,8 @@ namespace Peluches.Web.API.Controllers
 
         // PUT: api/Productos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        [HttpPut]
+        [Route("update/{idProducto}")]
         public async Task<IActionResult> PutProducto(int id, Producto producto)
         {
             if (id != producto.IdProducto)
@@ -75,6 +78,7 @@ namespace Peluches.Web.API.Controllers
         // POST: api/Productos
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Route("add")]
         public async Task<ActionResult<Producto>> PostProducto(Producto producto)
         {
             _context.Productos.Add(producto);
@@ -84,13 +88,14 @@ namespace Peluches.Web.API.Controllers
         }
 
         // DELETE: api/Productos/5
-        [HttpDelete("{id}")]
+        [HttpDelete]
+        [Route("delete/{idProducto}")]
         public async Task<IActionResult> DeleteProducto(int id)
         {
             var producto = await _context.Productos.FindAsync(id);
             if (producto == null)
             {
-                return NotFound();
+                return NotFound(new {CodigoError = 0,  DescripcionError = "El producto a eliminar no existe en la base de datos" });
             }
 
             _context.Productos.Remove(producto);
