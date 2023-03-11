@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Peluches.Administration.Web.API.Models
 {
@@ -11,7 +12,11 @@ namespace Peluches.Administration.Web.API.Models
         }
 
         public int IdProducto { get; set; }
+
+        [Required(ErrorMessage = "El nombre del Producto no puede ser nulo.")]
         public string? NombreProducto { get; set; }
+
+        [Required(ErrorMessage = "La descripción del Empleado no puede ser nulo.")]
         public string? Descripcion { get; set; }
         public decimal? PrecioVenta { get; set; }
         public int? IdMarca { get; set; }

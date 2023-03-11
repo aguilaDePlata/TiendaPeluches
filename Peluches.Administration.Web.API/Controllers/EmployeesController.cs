@@ -1,18 +1,22 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿
+using FluentValidation.AspNetCore;
+using FluentValidation.Results;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Peluches.Administration.Web.API.Base;
 using Peluches.Administration.Web.API.Models;
+using Peluches.Administration.Web.API.Validations;
 using System.Net;
 
 namespace Peluches.Administration.Web.API.Controllers
 {
     [Route("api/employees")]
     [ApiController]
+    [EmployeeValidator]
     public class EmployeesController : ControllerBase
     {
         private readonly TiendaPeluchesDBAzureContext _context;
-
 
         public EmployeesController(TiendaPeluchesDBAzureContext context)
         {

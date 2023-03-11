@@ -3,12 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Peluches.Administration.Web.API.Base;
 using Peluches.Administration.Web.API.Models;
+using Peluches.Administration.Web.API.Validations;
 using System.Net;
 
 namespace Peluches.Administration.Web.API.Controllers
 {
     [Route("api/products")]
     [ApiController]
+    [ProductValidator]
     public class ProductsController : ControllerBase
     {
         private readonly TiendaPeluchesDBAzureContext _context;

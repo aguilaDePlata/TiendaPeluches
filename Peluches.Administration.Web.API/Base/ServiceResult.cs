@@ -27,8 +27,8 @@ namespace Peluches.Administration.Web.API.Base
         private IEnumerable<object> GetMessageErrors(ModelStateDictionary ValidationDetail)
         {
             string jsonFormatValidations = ValidationDetail.Where(s => s.Value!.ValidationState == ModelValidationState.Invalid).Select(c => c.Value).ToJson();
-            IEnumerable<ModelValidationResult> resultValidations =
-                JsonConvert.DeserializeObject<IEnumerable<ModelValidationResult>>(jsonFormatValidations);
+            IEnumerable<BasicValidationInformation> resultValidations =
+                JsonConvert.DeserializeObject<IEnumerable<BasicValidationInformation>>(jsonFormatValidations);
 
             return resultValidations;
         }

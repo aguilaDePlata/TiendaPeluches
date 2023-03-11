@@ -1,11 +1,18 @@
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Peluches.Administration.Web.API.Models;
+using Peluches.Administration.Web.API.Validations;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<EmployeeValidatorAttribute>(int.MinValue);
+    options.Filters.Add<ProductValidatorAttribute>(int.MinValue);
+});
+//builder.Services.AddControllers();
 
 builder.Services.AddDbContext<TiendaPeluchesDBAzureContext>(opciones => opciones.UseSqlServer(builder.Configuration.GetConnectionString("TiendaPeluchesDBAzureContext")));
 
