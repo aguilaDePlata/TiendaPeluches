@@ -1,8 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using Peluches.Administration.Web.API.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+builder.Services.AddDbContext<TiendaPeluchesDBAzureContext>(opciones => opciones.UseSqlServer(builder.Configuration.GetConnectionString("TiendaPeluchesDBAzureContext")));
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
